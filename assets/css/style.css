@@ -9,3 +9,254 @@
 a {
     text-decoration: none;
 }
+
+html, body {
+    width: 100%;
+    height: 100vh;    
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#ball {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: none;
+    border: 1px solid grey;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -10px 0 0 -10px;
+    pointer-events: none;
+}
+
+
+
+.loading-screen {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 0vh;
+    z-index: 2;
+    background: #0f0f0f;
+}
+
+.loading-screen .intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.loading-screen .intro h1 {
+    font-weight: 300;
+    color: #fff;
+}
+
+.intro-title .letter {
+    display: inline-block;
+}
+
+
+
+.hero-left {
+    height: 100vh;
+    background: url(../images/left.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    animation: animateBg1 4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-delay: 4.8s;
+}
+
+@keyframes animateBg1 {
+    from {
+        background-position: 50% 50%;
+    } to {
+        background-position: 100% 50%;
+    }
+}
+
+.hero-middle {
+    background: #121212;
+    height: 100vh;
+}
+
+.hero-right {
+    background: url(../images/right.jpg) 50% 50% no-repeat;
+    background-size: cover;
+    height: 100vh;
+    animation: animateBg2 5s cubic-bezier(0.19, 1, 0.22, 1);
+    animation-delay: 3.8s;
+}
+
+@keyframes animateBg2 {
+    from {
+        background-position: 100% 50%;
+    } to {
+        background-position: 50% 50%;
+    }
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    position: absolute;
+    z-index: 1;
+    font-size: 20px;
+    color: rgba(255, 255, 255, .4);
+    line-height: 85px;
+    left: 21%;
+}
+
+.logo span {
+    color: #fff; 
+}
+.year {
+    position: absolute;
+    z-index: 1;
+    line-height: 85px;
+    right: 38.5%;
+    color: #fff;
+    font-size: 20px !important;
+}
+
+.overlay-text {
+    position: absolute;
+    color: red;
+    z-index: 1;
+    font-size: 178px;
+    font-weight: 200;
+    transform: rotate(-18deg);
+    top: 26%;
+    left: 12%;
+    mix-blend-mode: color;
+    opacity: 0;
+    animation: blinker 1s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 1;
+    }
+}
+
+.hero-title {
+    position: absolute;
+    z-index: 1;
+    top: 66%;
+    left: 43%;
+    color: #fff;
+    font-weight: 200 !important;
+    letter-spacing: 6px;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.hero-title .letter {
+    display: inline-block;
+}
+
+.bar {
+    position: absolute;
+    z-index: 1;
+    bottom: 7%;
+    left: 22%;
+    width: 165px;
+    height: 1px;
+    background: rgba(255, 255, 255, .2);
+}
+
+.project {
+    position: absolute;
+    z-index: 1;
+    bottom: 6%;
+    right: 38.5%;
+    color: grey;
+    font-size: 14px;
+}
+
+.media {
+    position: absolute;
+    z-index: 1;
+    bottom: 2%;
+    right: 2%;
+}
+
+.media ul li {
+    display: inline-block;
+    color: #999999;
+    font-size: 14px;
+    padding-right: 16px;
+}
+
+
+@media (max-width: 768px) {
+    .hero-left {
+        background: url(../images/left.jpg) 50% 50% no-repeat;
+        background-size: cover;
+    }
+    .hero-middle,
+    .hero-right {
+        display: none;
+    }
+    .wrap {
+        display: none;
+    }
+    .logo {
+        left: 0%;
+        margin-left: 24px;
+    }
+    .year {
+        right: 0%;
+        margin-right: 24px;
+    }
+    .hero-title {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        letter-spacing: 0px;
+        font-size: 16px;
+    }
+    .overlay-text {
+        display: none;
+    }
+    .bar {
+        display: none;
+    }
+    .project {
+        display: none;
+    }
+    .intro h1 {
+        font-size: 24px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
